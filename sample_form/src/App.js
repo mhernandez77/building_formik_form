@@ -14,7 +14,7 @@ function App() {
     onSubmit: values => {
       console.log('form:', values);
     },
-    validate: values => {
+    handleValidation: values => {
       let errors = {};
       if(!values.email) errors.name = "Field Required";
       if(!values.password) errors.password = "Field Required";
@@ -55,7 +55,7 @@ function App() {
                 {formik.errors.password}
               </div>:null}
           <button
-              onClick={loginCreds}
+              onClick={handleValidation}
               id="submitBtn"
               type="Submit">Submit</button>
           {/*    The submit button should have an id of submitBtn*/}
